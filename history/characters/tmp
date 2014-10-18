@@ -1,0 +1,38 @@
+id = ""
+                json_text = "[\n"
+                inbr = 0
+                for line in f:
+                    if line[0].isdigit():
+                        for n in line:
+                            if n.isdigit():
+                                id += n
+                            else:
+                                break
+                        json_text+='{'
+                    elif line[0] == '}':
+                        id = ""
+                        json_text += '}'
+                    else:
+                        line = line.strip()
+                        line = line.replace(" ", "")
+                        newLine = ""
+                        for l in line:
+                            if l == '#':
+                                newLine = ""
+                                break
+                            elif l == '{':
+                                newLine += "{"
+                                inbr+=1
+                            elif l == '}':
+                                newLine += "}"
+                                inbr-=1
+                            elif l.isdigit():
+                                newLine += l
+                            elif l == "=":
+                                newLine = '"' + newLine + '":'
+                            elif l != " ":
+                                newLine += l
+                        #print (newLine)
+                        json_text += newLine + '\n'
+                json_text += "]"
+                print (json_text.replace('""', '"'))

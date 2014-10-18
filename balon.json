@@ -1,0 +1,180 @@
+[
+  {
+    "characters": [
+      {
+        "idA": "1107",
+        "religion": "drowned_god",
+        "add_trait": "familyperson",
+        "father": "107",
+        "culture": "ironborn",
+        "learning": "5",
+        "dna": "ddijhhebgdc",
+        "martial": "8",
+        "aName": "Balon",
+        "stewardship": "5",
+        "diplomacy": "6",
+        "mother": "15107",
+        "properties": "cj0dik0000",
+        "dynasty": "107",
+        "dates": {
+          "8299.2.11": [
+            {
+              "effect": {
+                "if": {
+                  "character_event": {
+                    "id": "999900222",
+                    "days": "2"
+                  },
+                  "limit": {
+                    "NOT": {
+                      "month": "4"
+                    }
+                  }
+                },
+                "set_character_flag": "ironborn_war_vs_north"
+              }
+            }
+          ],
+          "8299.2.13": [
+            {
+              "effect": {
+                "k_iron_isles": {
+                  "destroy_landed_title": "ROOT"
+                }
+              }
+            }
+          ],
+          "8250.1.1": [
+            {
+              "birth": "8250.1.1"
+            }
+          ],
+          "8284.1.1": [
+            {
+              "effect": {
+                "if": {
+                  "character_event": {
+                    "id": "999900226"
+                  },
+                  "limit": {
+                    "NOT": {
+                      "year": "8289"
+                    }
+                  }
+                },
+                "any_vassal": {
+                  "clr_character_flag": "neutral"
+                },
+                "clr_character_flag": "neutral"
+              }
+            }
+          ],
+          "8289.1.1": [
+            {
+              "effect": {
+                "set_character_flag": "greyjoy_rebellion"
+              }
+            }
+          ],
+          "8266.1.1": [
+            {
+              "add_trait": "trained_warrior",
+              "add_spouse": "2122"
+            }
+          ],
+          "8299.10.3": [
+            {
+              "death": {
+                "death_reason": "death_accident"
+              }
+            }
+          ],
+          "8282.9.15": [
+            {
+              "effect": {
+                "if": {
+                  "character_event": {
+                    "id": "999900208"
+                  },
+                  "limit": {
+                    "NOT": {
+                      "year": "8284"
+                    }
+                  }
+                },
+                "any_vassal": {
+                  "set_character_flag": "neutral"
+                },
+                "set_character_flag": "balon_greyjoy"
+              }
+            }
+          ],
+          "8289.2.1": [
+            {
+              "effect": {
+                "clr_character_flag": "greyjoy_rebellion"
+              }
+            }
+          ]
+        },
+        "intrigue": "7"
+      },
+      {
+        "culture": "ironborn",
+        "idA": "107",
+        "religion": "drowned_god",
+        "martial": "8",
+        "aName": "Quellon",
+        "add_trait": "ambitious",
+        "mother": "47107",
+        "dates": {
+          "8246.1.1": [
+            {
+              "add_spouse": "15107"
+            }
+          ],
+          "8241.1.1": [
+            {
+              "add_trait": "master_warrior"
+            }
+          ],
+          "8265.1.1": [
+            {
+              "add_spouse": "16107"
+            }
+          ],
+          "8225.1.1": [
+            {
+              "birth": "8225.1.1"
+            }
+          ],
+          "8270.1.1": [
+            {
+              "death": "8270.1.1"
+            }
+          ],
+          "8259.1.1": [
+            {
+              "effect": {
+                "e_iron_throne": {
+                  "holder_scope": {
+                    "opinion": {
+                      "modifier": "opinion_dithered",
+                      "years": "5",
+                      "who": "ROOT"
+                    }
+                  }
+                },
+                "any_vassal": {
+                  "set_character_flag": "neutral"
+                },
+                "set_character_flag": "neutral"
+              }
+            }
+          ]
+        },
+        "father": "17107",
+        "dynasty": "107"
+      }
+    ]
+  }]

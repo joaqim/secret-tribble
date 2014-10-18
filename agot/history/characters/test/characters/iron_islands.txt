@@ -1,0 +1,416 @@
+###################
+###House Greyjoy###
+###################
+###THE Balon###
+1107 = {	
+	name="Balon"	
+	dynasty=107	
+	#dna="hhpefjgogjl"
+	#properties="cj0c0d"
+	dna="ddijhhebgdc"
+	properties="cj0dik0000"
+
+	martial = 8	
+	diplomacy = 6	
+	intrigue = 7	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="wroth"	
+	#add_trait="misguided_warrior"
+	add_trait="skilled_tactician"
+	#add_trait="poor_warrior"
+	add_trait="brave"
+	add_trait="proud"
+	add_trait="ambitious"
+	add_trait="rude"
+	add_trait="familyperson"
+	
+	father=107
+	mother=15107
+	
+	8250.1.1 = {birth="8250.1.1"  }
+	8266.1.1 = {
+		add_spouse = 2122 #Alannys Harlaw
+		add_trait="trained_warrior"
+	}
+	8282.9.15 = { #RR
+		effect = {
+			if = {
+				limit = { NOT = { year = 8284 } }
+				character_event = { id = 999900208 }
+			}
+			any_vassal = { set_character_flag = neutral  }
+			set_character_flag = neutral
+			set_character_flag = balon_greyjoy
+		}
+	}	
+	8284.1.1 = { #RR
+		effect = {
+			if = {
+				limit = { NOT = { year = 8289 } }
+				character_event = { id = 999900226 }
+			}
+			any_vassal = { clr_character_flag = neutral  }
+			clr_character_flag = neutral
+		}
+	}
+	8289.1.1 = { #GR
+		effect = {
+			set_character_flag = greyjoy_rebellion
+		}
+	}
+	8289.2.1 = { #GR
+		effect = {
+			clr_character_flag = greyjoy_rebellion
+		}
+	}
+	8299.2.11 = { #ACoK
+		effect = {
+			if = {
+				limit = { NOT = { month = 4 } }
+				character_event = { id = 999900222 days = 2 }
+			}	
+			set_character_flag = ironborn_war_vs_north
+		}
+	}
+	8299.2.13={
+		effect = { 
+			k_iron_isles = { destroy_landed_title = ROOT }
+		}	
+	}
+	# 8299.3.1 = { #ASoS
+		# effect = {
+			# character_event = { id = 999900231 }
+		# }
+	# }	
+	
+	8299.10.3={
+		# Fell of a bridge...?
+		death = {
+			death_reason = death_accident
+		}
+	}	
+}		
+##Balons father###
+107 = {
+	name="Quellon"	
+	dynasty=107
+
+	martial = 8
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="temperate"	
+	add_trait="skilled_tactician"
+	add_trait="brave"
+	add_trait="proud"
+	add_trait="ambitious"
+
+	father=17107
+	mother=47107
+	
+	8225.1.1 = {birth="8225.1.1"  }
+	8241.1.1 = {add_spouse = 11107}
+	8241.1.1 = {add_trait=master_warrior}
+	8246.1.1 = {add_spouse = 15107}
+	8259.1.1 = { #Ninepenny Kings
+		effect = {
+			# if = {
+				# limit = { NOT = { year = 8259 } }
+				# character_event = { id = 999990210 }
+			# }
+			any_vassal = { set_character_flag = neutral  }
+			set_character_flag = neutral
+			e_iron_throne = {
+				holder_scope = { 
+					opinion = {
+						modifier = opinion_dithered
+						who = ROOT
+						years = 5
+					}
+				}
+			}
+		}
+	}
+	8265.1.1 = {add_spouse = 16107}
+	8270.1.1 = {death="8270.1.1"}
+}		
+###Balons Children###
+5107 = {
+	name="Rodrik"	
+	dynasty=107
+	dna="cdijhyebgdf"
+	properties="ae0aik0000"
+	
+	martial = 6	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="lustful"	
+	add_trait="tough_soldier"
+	add_trait="skilled_warrior"
+	add_trait="brave"
+	add_trait="proud"
+
+	father=1107	
+	mother = 2122
+	
+	8267.1.1 = {birth="8267.1.1"}	
+	8289.6.1={
+		# Died during Balons 1st rebellion.
+		death = {
+			death_reason = death_battle
+			killer = 128 #Killed by Jason Mallister during the Battle of Seagard
+		}
+	}	
+}
+6107 = {
+	name="Maron"	
+	dynasty=107
+	dna="cdijhvebgde"
+	properties="am0ack0000"
+
+	martial = 6	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="brave"
+	add_trait="tough_soldier"
+	#add_trait="skilled_warrior"
+	add_trait="proud"
+		
+	
+	father=1107	
+	mother = 2122
+	
+	8269.1.1 = {birth="8269.1.1"}	
+	8289.6.1={
+		# Died during Balons 1st rebellion.
+		death = {
+			death_reason = death_battle
+			#killer = In theory Robert, but Balon seems to have pinned it on Ned. Im leaving it blank then.
+		}
+	}	
+}
+7107 = {
+	name="Asha"	#THE Asha
+	female=yes	
+	dynasty=107
+	dna="dahccbjcgav"
+
+	martial = 6	
+	diplomacy = 5	
+	intrigue = 7	
+	stewardship = 3	
+	learning = 6
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="gregarious"	
+	add_trait="brave"
+	add_trait="tough_soldier"
+	add_trait="proud"
+	add_trait="fair"
+	add_trait="quick"
+	give_nickname = nick_the_krakens_daughter
+	
+	father=1107	
+	mother = 2122
+	
+	8276.1.1 = {birth="8276.1.1" }
+	8282.1.1 = { add_trait="poor_warrior" }
+	8289.1.1 = { 
+		remove_trait="poor_warrior"
+		add_trait="trained_warrior" 
+		effect = {
+			if = {
+				limit = { NOT = { father = { ai = no } } }
+				add_character_modifier = { #To stop marriage
+					name = child
+					duration = 2300
+					hidden = yes
+				}
+			}	
+		}
+	}	
+	8299.7.2 = {	
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				spawn_unit = {
+					province = 35
+					home = 35
+					scaled_by_biggest_garrison = 1.5
+					troops = {
+						archers = { 10 10 }
+						heavy_infantry = { 10 10 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}
+		}	
+	}
+	8299.11.5 = {
+		employer=4317
+		effect = { 
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = house_arrest
+					duration = -1
+				}
+			}
+		}
+	}
+	8300.1.1 = {
+		add_spouse=205081092 #Erik Ironmaker, wed in Asha's absence
+		#Game moves her back to Pyke after the marriage, so here we go again...
+		effect = { 
+			k_stormlands = {
+				holder_scope = {
+					reverse_banish = ROOT
+				}
+			}
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = house_arrest
+					duration = -1
+				}
+			}
+		}
+	}
+}
+8107 = {
+	name="Theon"	
+	dynasty=107	
+	dna="ddgjhhibgdc"
+	properties="0e00c"
+
+	martial = 6
+	diplomacy = 6
+	intrigue = 7
+	stewardship = 3
+	learning = 2
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="deceitful"	
+	add_trait="brave"
+	add_trait="skilled_tactician"
+	#add_trait="skilled_warrior"
+	add_trait="proud"
+	add_trait="hunter"
+	add_trait="fair"
+	add_trait="envious"
+	add_trait="cynical"
+	add_trait="hedonist"
+	add_trait="arbitrary"
+
+	father=1107	
+	mother = 2122
+	
+	8279.1.1 = {birth="8279.1.1"}
+	8289.6.1 = { # hostage
+		employer = 59
+		guardian = 59
+	} 
+	8294.1.1 = { # hostage
+		effect = {
+			k_north = {
+				holder_scope = {
+					current_heir = {
+						add_friend = ROOT
+					}
+				}
+			}
+		}	
+	} 
+	8295.6.1 = {
+		add_trait="skilled_warrior"
+	} 
+	8298.11.2 = { 
+		employer = 2059
+		effect = {
+			k_north = {
+				holder_scope = {
+					add_friend = ROOT
+					current_heir = {
+						remove_friend = ROOT
+					}
+				}
+			}
+		}
+	} 
+	8299.2.13 = { 
+		employer = 1107
+	}
+	8299.2.18 = { 
+		add_trait="turncloak"
+		effect = {
+			k_north = {
+				holder_scope = {
+					remove_friend = ROOT
+					opinion = {
+						who = ROOT
+						modifier = opinion_betrayed
+						years = 20
+					}
+				}
+			}
+		}	
+	} 
+	8299.7.2 = { 
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				set_character_flag = theon
+				spawn_unit = {
+					province = 47
+					home = 47
+					scaled_by_biggest_garrison = 0.02
+					troops = {
+						archers = { 10 10 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}	
+		}
+		add_trait="scarred"
+		add_trait="eunuch"
+		add_trait="paranoid"
+		add_trait="shy"
+		remove_trait="brave"
+		remove_trait="hedonist"
+		remove_trait="proud"
+		remove_trait="hunter"
+	} 
+	8299.7.3 = {
+		employer=2087
+		effect = { 
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = the_oubliette
+					duration = -1
+				}
+			}
+		}
+	}
+}

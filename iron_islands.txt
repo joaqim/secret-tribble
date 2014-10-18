@@ -1,0 +1,4653 @@
+###################
+###House Greyjoy###
+###################
+###THE Balon###
+1107 = {	
+	name="Balon"	
+	dynasty=107	
+	#dna="hhpefjgogjl"
+	#properties="cj0c0d"
+	dna="ddijhhebgdc"
+	properties="cj0dik0000"
+
+	martial = 8	
+	diplomacy = 6	
+	intrigue = 7	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="wroth"	
+	#add_trait="misguided_warrior"
+	add_trait="skilled_tactician"
+	#add_trait="poor_warrior"
+	add_trait="brave"
+	add_trait="proud"
+	add_trait="ambitious"
+	add_trait="rude"
+	add_trait="familyperson"
+	
+	father=107
+	mother=15107
+	
+	8250.1.1 = {birth="8250.1.1"  }
+	8266.1.1 = {
+		add_spouse = 2122 #Alannys Harlaw
+		add_trait="trained_warrior"
+	}
+	8282.9.15 = { #RR
+		effect = {
+			if = {
+				limit = { NOT = { year = 8284 } }
+				character_event = { id = 999900208 }
+			}
+			any_vassal = { set_character_flag = neutral  }
+			set_character_flag = neutral
+			set_character_flag = balon_greyjoy
+		}
+	}	
+	8284.1.1 = { #RR
+		effect = {
+			if = {
+				limit = { NOT = { year = 8289 } }
+				character_event = { id = 999900226 }
+			}
+			any_vassal = { clr_character_flag = neutral  }
+			clr_character_flag = neutral
+		}
+	}
+	8289.1.1 = { #GR
+		effect = {
+			set_character_flag = greyjoy_rebellion
+		}
+	}
+	8289.2.1 = { #GR
+		effect = {
+			clr_character_flag = greyjoy_rebellion
+		}
+	}
+	8299.2.11 = { #ACoK
+		effect = {
+			if = {
+				limit = { NOT = { month = 4 } }
+				character_event = { id = 999900222 days = 2 }
+			}	
+			set_character_flag = ironborn_war_vs_north
+		}
+	}
+	8299.2.13={
+		effect = { 
+			k_iron_isles = { destroy_landed_title = ROOT }
+		}	
+	}
+	# 8299.3.1 = { #ASoS
+		# effect = {
+			# character_event = { id = 999900231 }
+		# }
+	# }	
+	
+	8299.10.3={
+		# Fell of a bridge...?
+		death = {
+			death_reason = death_accident
+		}
+	}	
+}		
+##Balons father###
+107 = {
+	name="Quellon"	
+	dynasty=107
+
+	martial = 8
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="temperate"	
+	add_trait="skilled_tactician"
+	add_trait="brave"
+	add_trait="proud"
+	add_trait="ambitious"
+
+	father=17107
+	mother=47107
+	
+	8225.1.1 = {birth="8225.1.1"  }
+	8241.1.1 = {add_spouse = 11107}
+	8241.1.1 = {add_trait=master_warrior}
+	8246.1.1 = {add_spouse = 15107}
+	8259.1.1 = { #Ninepenny Kings
+		effect = {
+			# if = {
+				# limit = { NOT = { year = 8259 } }
+				# character_event = { id = 999990210 }
+			# }
+			any_vassal = { set_character_flag = neutral  }
+			set_character_flag = neutral
+			e_iron_throne = {
+				holder_scope = { 
+					opinion = {
+						modifier = opinion_dithered
+						who = ROOT
+						years = 5
+					}
+				}
+			}
+		}
+	}
+	8265.1.1 = {add_spouse = 16107}
+	8270.1.1 = {death="8270.1.1"}
+}		
+###Balons Children###
+5107 = {
+	name="Rodrik"	
+	dynasty=107
+	dna="cdijhyebgdf"
+	properties="ae0aik0000"
+	
+	martial = 6	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="lustful"	
+	add_trait="tough_soldier"
+	add_trait="skilled_warrior"
+	add_trait="brave"
+	add_trait="proud"
+
+	father=1107	
+	mother = 2122
+	
+	8267.1.1 = {birth="8267.1.1"}	
+	8289.6.1={
+		# Died during Balons 1st rebellion.
+		death = {
+			death_reason = death_battle
+			killer = 128 #Killed by Jason Mallister during the Battle of Seagard
+		}
+	}	
+}
+6107 = {
+	name="Maron"	
+	dynasty=107
+	dna="cdijhvebgde"
+	properties="am0ack0000"
+
+	martial = 6	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="brave"
+	add_trait="tough_soldier"
+	#add_trait="skilled_warrior"
+	add_trait="proud"
+		
+	
+	father=1107	
+	mother = 2122
+	
+	8269.1.1 = {birth="8269.1.1"}	
+	8289.6.1={
+		# Died during Balons 1st rebellion.
+		death = {
+			death_reason = death_battle
+			#killer = In theory Robert, but Balon seems to have pinned it on Ned. Im leaving it blank then.
+		}
+	}	
+}
+7107 = {
+	name="Asha"	#THE Asha
+	female=yes	
+	dynasty=107
+	dna="dahccbjcgav"
+
+	martial = 6	
+	diplomacy = 5	
+	intrigue = 7	
+	stewardship = 3	
+	learning = 6
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="gregarious"	
+	add_trait="brave"
+	add_trait="tough_soldier"
+	add_trait="proud"
+	add_trait="fair"
+	add_trait="quick"
+	give_nickname = nick_the_krakens_daughter
+	
+	father=1107	
+	mother = 2122
+	
+	8276.1.1 = {birth="8276.1.1" }
+	8282.1.1 = { add_trait="poor_warrior" }
+	8289.1.1 = { 
+		remove_trait="poor_warrior"
+		add_trait="trained_warrior" 
+		effect = {
+			if = {
+				limit = { NOT = { father = { ai = no } } }
+				add_character_modifier = { #To stop marriage
+					name = child
+					duration = 2300
+					hidden = yes
+				}
+			}	
+		}
+	}	
+	8299.7.2 = {	
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				spawn_unit = {
+					province = 35
+					home = 35
+					scaled_by_biggest_garrison = 1.5
+					troops = {
+						archers = { 10 10 }
+						heavy_infantry = { 10 10 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}
+		}	
+	}
+	8299.11.5 = {
+		employer=4317
+		effect = { 
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = house_arrest
+					duration = -1
+				}
+			}
+		}
+	}
+	8300.1.1 = {
+		add_spouse=205081092 #Erik Ironmaker, wed in Asha's absence
+		#Game moves her back to Pyke after the marriage, so here we go again...
+		effect = { 
+			k_stormlands = {
+				holder_scope = {
+					reverse_banish = ROOT
+				}
+			}
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = house_arrest
+					duration = -1
+				}
+			}
+		}
+	}
+}
+8107 = {
+	name="Theon"	
+	dynasty=107	
+	dna="ddgjhhibgdc"
+	properties="0e00c"
+
+	martial = 6
+	diplomacy = 6
+	intrigue = 7
+	stewardship = 3
+	learning = 2
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="deceitful"	
+	add_trait="brave"
+	add_trait="skilled_tactician"
+	#add_trait="skilled_warrior"
+	add_trait="proud"
+	add_trait="hunter"
+	add_trait="fair"
+	add_trait="envious"
+	add_trait="cynical"
+	add_trait="hedonist"
+	add_trait="arbitrary"
+
+	father=1107	
+	mother = 2122
+	
+	8279.1.1 = {birth="8279.1.1"}
+	8289.6.1 = { # hostage
+		employer = 59
+		guardian = 59
+	} 
+	8294.1.1 = { # hostage
+		effect = {
+			k_north = {
+				holder_scope = {
+					current_heir = {
+						add_friend = ROOT
+					}
+				}
+			}
+		}	
+	} 
+	8295.6.1 = {
+		add_trait="skilled_warrior"
+	} 
+	8298.11.2 = { 
+		employer = 2059
+		effect = {
+			k_north = {
+				holder_scope = {
+					add_friend = ROOT
+					current_heir = {
+						remove_friend = ROOT
+					}
+				}
+			}
+		}
+	} 
+	8299.2.13 = { 
+		employer = 1107
+	}
+	8299.2.18 = { 
+		add_trait="turncloak"
+		effect = {
+			k_north = {
+				holder_scope = {
+					remove_friend = ROOT
+					opinion = {
+						who = ROOT
+						modifier = opinion_betrayed
+						years = 20
+					}
+				}
+			}
+		}	
+	} 
+	8299.7.2 = { 
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				set_character_flag = theon
+				spawn_unit = {
+					province = 47
+					home = 47
+					scaled_by_biggest_garrison = 0.02
+					troops = {
+						archers = { 10 10 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}	
+		}
+		add_trait="scarred"
+		add_trait="eunuch"
+		add_trait="paranoid"
+		add_trait="shy"
+		remove_trait="brave"
+		remove_trait="hedonist"
+		remove_trait="proud"
+		remove_trait="hunter"
+	} 
+	8299.7.3 = {
+		employer=2087
+		effect = { 
+			prisoner = yes
+			hidden_tooltip = {
+				remove_character_modifier = the_dungeon
+				add_character_modifier = { 
+					name = the_oubliette
+					duration = -1
+				}
+			}
+		}
+	}
+}
+###Balons Brothers###
+2107 = {
+	name="Euron"	 
+	dynasty=107
+	#dna="hhaefjlogjl"
+	#properties="cd0c0d"
+	#dna="clajhmgbgdo"
+	#properties="ae0aib0000"
+	dna="dmmdbzgigcd"
+	properties="0e00c"
+	
+	martial = 8	
+	diplomacy = 5	
+	intrigue = 6	
+	stewardship = 8	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="ambitious"	
+	add_trait="brave"
+	add_trait="strong"
+	add_trait="cruel"	
+	add_trait="deceitful"	
+	add_trait="elusive_shadow"
+	add_trait="lustful"
+	add_trait="arbitrary"
+	add_trait="hedonist"
+	add_trait="mystic"
+	add_trait="gregarious"
+	add_trait="fair"
+
+	father=107
+	mother=15107
+
+	8255.1.1 = {birth="8255.1.1"}	
+	8260.1.1 = {give_nickname = nick_crows_eye effect = { set_character_flag = eye_injury } }
+	8267.1.1 = {
+		add_trait="trained_warrior"
+		effect = {
+			any_sibling = { #Aeron
+				limit = { 	
+					is_female = no 
+					trait = selfish
+					trait = gregarious
+				}
+				add_rival = ROOT
+			}
+			any_sibling = { #Victarion
+				limit = { 	
+					is_female = no 
+					trait = strong
+					trait = content
+					trait = brave
+				}
+				add_rival = ROOT
+			}
+		}
+	}
+	8289.6.1 = {
+		effect = {
+			any_sibling = { #Aeron
+				limit = { 	
+					is_female = no 
+					trait = drowned
+				}
+				add_rival = ROOT
+			}
+		}
+	}
+	8293.1.1 = {
+		effect = {
+			if = {
+				limit = { is_ruler = no }
+				k_pentos = {
+					holder_scope = {
+						reverse_banish = ROOT
+					}
+				}
+			}
+		}
+	}
+	8299.1.1 = {
+		effect = {
+			wealth = 1000 #gathered great welath on adventures
+			prestige = 450
+		}
+	}
+	8299.10.3={
+		effect = { 
+			k_iron_isles = { destroy_landed_title = ROOT }
+			e_iron_isles = { k_iron_isles = { de_jure_liege = PREV } }
+		}	
+	}
+	8300.1.1={ #Occupy Shield Isles
+		raise_levies = {
+			location = 263 #Oakenshield
+			force_mult = 1
+		}
+		effect = { 
+			set_character_flag = euron_shield_isles
+			wealth = -500 #expended some on kignsmoot
+			spawn_unit = {
+				province = 262 #Greyshield
+				scaled_by_biggest_garrison = 1.25
+				owner = ROOT
+				leader = 5122 #Harras Harlaw
+				troops = {
+					archers = { 4 4 }
+					heavy_infantry = { 35 35 }
+					light_infantry = { 23 23 }								
+				}
+			} 
+			spawn_unit = {
+				province = 261 #Greenshield
+				scaled_by_biggest_garrison = 1.25
+				owner = ROOT
+				leader = 9121 #Andrik the Unsmiling
+				troops = {
+					archers = { 4 4 }
+					heavy_infantry = { 35 35 }
+					light_infantry = { 23 23 }								
+				}
+			}
+			spawn_unit = {
+				province = 264 #Southshield
+				scaled_by_biggest_garrison = 1.25
+				owner = ROOT
+				leader = 3107 #Victarion
+				troops = {
+					archers = { 4 4 }
+					heavy_infantry = { 35 35 }
+					light_infantry = { 23 23 }								
+				}
+			}
+			character_event = { id = 999900232 } #end siege in shield islands
+		}	
+	}
+}
+3107 = {
+	name="Victarion"	
+	dynasty=107
+	dna="bdjjhmbbgdd"
+	properties="ce0dik0000"
+
+	martial = 8	# 20
+	diplomacy = 6 # 7
+	intrigue = 4	
+	stewardship = 5	
+	learning = 6
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=107
+	mother=15107
+	
+	add_trait="strong"
+	add_trait="content"
+	add_trait="brave"
+	add_trait="authoritative"
+	
+	8256.1.1 = {birth="8256.1.1"}
+	8267.1.1 = {
+		effect = {
+			fertility = -0.4
+			any_sibling = { #Euron
+				limit = { 	
+					is_female = no 
+					trait = fair
+					trait = strong
+					trait = cruel
+				}
+				add_rival = ROOT
+			}
+		}
+	}
+	8269.1.1 = {
+		add_trait="tough_soldier"
+		add_trait="master_warrior"
+	}
+	8282.1.1 = {
+		add_spouse=40003107
+	}
+	8293.1.1 = {
+		add_trait="widowed" #Killed his own wife
+	}
+	8299.1.1 = {
+		effect = {
+			wealth = 450
+			prestige = 150
+		}
+	}
+	8299.7.2 = {
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				spawn_unit = {
+					province = 66
+					home = 66
+					scaled_by_biggest_garrison = 2.5
+					troops = {
+						archers = { 10 10 }
+						heavy_infantry = { 10 10 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}	
+		}
+	}	
+	8300.1.1 = {
+		remove_trait="content"
+		add_trait="ambitious"
+		add_trait="envious"
+	}
+	8300.1.1 = {
+		effect = {
+			character_event = { id = 999900232 } #end siege in shield islands
+			religion = rhllor
+			add_trait = favored_by_rhllor
+			add_trait = scarred
+			add_trait = sympathy_drowned_god
+		}
+	}
+}
+40003107 = {
+	name="Bythia"	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait = lustful
+	
+	8266.1.1 = {birth="8266.1.1"}
+	8284.1.1 = {
+		effect = {
+			spouse = {
+				random_sibling = {
+					limit = { 	
+						is_female = no 
+						trait = fair
+						trait = strong
+						trait = cruel
+					}
+					add_lover = ROOT
+				}
+			}
+		}	
+	}
+	8293.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer=3107
+		}
+	}
+}
+9107 = {
+	name="Urrigon"	#dead
+	dynasty=107	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="brave"	
+	add_trait="skilled_tactician"	
+	
+	father=107
+	mother=15107
+	
+	8255.1.1 = {birth="8255.1.1"}	
+	8280.1.1={
+		# Died after an infection, cause by a fingerdance game with Aeron.
+		death = {
+			death_reason = death_accident
+			killer = 4107
+		}
+	}
+}
+4107 = {
+	name="Aeron"	#dumphair  #Please update roberts_rebellion_events if traits change
+	dynasty=107	
+
+	martial = 5	
+	diplomacy = 9	
+	intrigue = 4	
+	stewardship = 4	
+	learning = 9
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="flamboyant_schemer"
+	add_trait="gregarious"
+	add_trait="selfish"
+
+	father=107
+	mother=15107
+	
+	8257.1.1 = {birth="8257.1.1"}
+	8267.1.1 = {
+		effect = {
+			any_sibling = { #Euron
+				limit = { 	
+					is_female = no 
+					trait = fair
+					trait = strong
+					trait = cruel
+				}
+				add_rival = ROOT
+			}
+		}
+	}
+	8273.1.1 = {
+		add_trait="drunkard"
+		add_trait="hedonist"	
+	}
+	8280.1.1 = {add_trait = depressed}
+	8289.6.1 = {
+		#Damphaired
+		remove_trait = hedonist
+		remove_trait = gregarious
+		remove_trait = flamboyant_schemer
+		remove_trait = depressed
+		remove_trait= drunkard
+		remove_trait= selfish
+		add_trait = zealous
+		add_trait = diligent
+		add_trait = chaste
+		add_trait = grey_eminence
+		add_trait = drowned
+		employer=190
+		effect = { 
+			prisoner = yes
+		}
+		give_nickname = nick_damphair
+	}
+	8290.6.1 = {
+		employer=1107
+		effect = { 
+			prisoner = no
+		}
+	}
+
+}
+10107 = {
+	name="Robin"
+	dynasty=107	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=107
+	mother=16107
+	
+	8259.1.1 = {birth="8259.1.1"}
+	8264.1.1 = {death="8264.1.1"}		
+}
+###Quellons Wifes###
+11107 = {
+	name="Margaret"	
+	female=yes	
+	dynasty=120
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=9120
+	mother=10120
+	
+	8225.1.1 = {birth="8225.1.1"}
+	8246.1.1 = {death="8246.1.1"}
+}
+###Her 3 dead sons###
+12107 = {
+	name="Harlon"
+	dynasty=107	
+	
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=107
+	mother=11107
+	
+	8242.1.1 = {birth="8242.1.1"}
+	8244.1.1 = {
+		add_trait=has_greyscale
+		death = {
+			death_reason = death_trait
+		}
+	}
+}
+13107 = {
+	name="Quenton"
+	dynasty=107	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=107
+	mother=11107	
+	
+	8243.1.1 = {birth="8243.1.1"}
+	8246.1.1 = {death="8246.1.1"}	
+}
+14107 = {
+	name="Donel"
+	dynasty=107	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=107
+	mother=11107	
+	
+	8244.1.1 = {birth="8244.1.1"}
+	8249.1.1 = {death="8249.1.1"}
+}
+###Robins Mother###
+16107 = {
+	name="Bina"	
+	female=yes	
+	dynasty=157
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=2157
+	
+	8244.1.1 = {birth="8244.1.1"}
+	8276.1.1 = {death="8276.1.1"}	
+}
+#Distant Cousins
+59107 = {
+	name="Quenton"	# With Asha, captain of a ship
+	dynasty=107
+	
+	martial=7
+	stewardship=4
+	diplomacy=3
+	intrigue=6
+	learning=2
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=58107
+	mother=48107
+	
+	add_trait="tough_soldier"
+
+	8256.1.1 = {birth="8256.1.1"}
+	8272.1.1 = {add_trait=trained_warrior}
+	8301.1.1 = {death = {death_reason = death_battle}} #Dies in Woods near Deepwood Motte
+}
+62107 = {
+	name="Dagon"	# With Asha, drunkard
+	dynasty=107
+	
+	martial=5
+	stewardship=2
+	diplomacy=4
+	intrigue=7
+	learning=2
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=61107
+	mother=4001107
+	
+	add_trait="drunkard"
+	add_trait="misguided_warrior"
+
+	8248.1.1 = {birth="8248.1.1"}
+	8263.1.1 = {add_trait=trained_warrior}
+	8278.1.1 = {
+		give_nickname=nick_the_drunkard
+	}
+	8301.1.1 = {death = {death_reason = death_battle}}
+}
+#Household
+201107 = {
+	name="Qalen"
+
+	religion="the_seven"
+	culture="crownlander"
+	
+	learning = 10
+
+	8242.1.1 = {birth="8242.1.1"}
+	8262.1.1 = {
+		add_trait="maester"
+		add_trait="martial_cleric"
+		effect = { set_character_flag = serving_with_lord }
+	}
+	8271.1.1 = {
+		employer=1107
+	}
+	8296.1.1 = {death="8296.1.1"}	
+}
+202107 = {
+	name="Wendamyr"
+
+	religion="the_seven"
+	culture="stormlander"
+	
+	learning = 10
+
+	8263.1.1 = {birth="8263.1.1"}
+	8282.1.1 = {
+		add_trait="maester"
+		add_trait="martial_cleric"
+		employer=88129
+		effect = { set_character_flag = serving_with_lord }
+	}
+	8292.1.1={
+		employer=88124
+	}
+	8296.1.1 = {
+		employer=1107
+	}	
+	8299.11.3 = {
+		employer=2107 
+	}
+}
+203107 = {
+	name="Tarle"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	learning = 10
+	
+	add_trait=zealous
+
+	8249.1.1 = {birth="8249.1.1"}
+	8278.1.1 = {
+		employer=1107
+		add_trait="drowned"
+		give_nickname=nick_the_thrice_drowned
+	}
+	8299.11.3 = {
+		employer=2107 
+	}
+}
+204107 = {
+	name="Nute"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	martial = 6
+	
+	8252.1.1 = {birth="8252.1.1"}
+	8278.1.1 = {
+		effect = { set_character_flag = fingerdance_expert }
+		employer=1107
+		give_nickname=nick_the_barber
+		add_trait=skilled_warrior
+	}
+	8299.11.3 = {
+		employer=2107 
+	}
+}
+
+##################
+###House Botley###
+##################
+###The lord, Drowned in canon###
+64 = {
+	name="Sawane"	
+	dynasty=64	
+
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=9064	
+	mother=20064
+
+	8251.1.1 = {birth="8251.1.1"}
+	8267.1.1 = {add_spouse = 2109}	
+	8299.12.1={
+		# Drowned by Euron for refusin to kneel to him.
+		death = {
+			death_reason = death_execution
+			killer = 2107
+		}
+	}
+}
+###His wife###
+2109 = {		
+	name="Quella"	
+	female=yes	
+	dynasty=109	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	father=1109
+	mother=4109
+
+	8251.1.1 = {birth="8251.1.1"}
+}	
+###His Father###
+9064 = {		
+	name="Calon"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=302664
+	mother=402664
+	
+	8231.1.1 = {birth="8231.1.1"}	
+	8247.1.1 = {add_spouse = 20064}	
+	8281.1.1 = {death="8281.1.1"}
+}
+20064 = {		
+	name="Richenda"	
+	female=yes
+
+	add_trait="naive_appeaser"	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	8231.1.1 = {birth="8231.1.1"}	
+	8281.1.1 = {death="8281.1.1"}	
+}		
+###His Brothers###
+7064 = {		
+	name="Germund"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait=ambitious
+	
+	father=9064	
+	
+	8252.1.1 = { birth="8252.1.1"}	
+	8268.1.1 = { add_trait=trained_warrior }	
+	8275.1.1 = { 
+		add_spouse=21064 
+	}	
+	8299.11.3 = {
+		employer=2107 #Euron
+	}
+}
+10064 = {		
+	name="Lucimore"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=9064	
+	mother=20064	
+	
+	8253.1.1 = {birth="8253.1.1"}	
+}
+8064 = {		
+	name="Sargon"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="lustful"
+
+	father=9064	
+	mother=20064	
+	
+	8254.1.1 = {birth="8254.1.1"}	
+}
+###His Children###
+1064 = {		
+	name="Harren"	#died at moat calin
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=64
+	mother=2109
+
+	8267.1.1 = {birth="8267.1.1"}	
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+	8300.1.1={
+		# Killed by Crannogmen poision at moat calin.
+		death = {
+			death_reason = death_battle
+		}
+	}
+}		
+2064 = {		
+	name="Tristifer"	#ashas bith
+	dynasty=64	
+
+	martial = 4	
+	diplomacy = 7	
+	intrigue = 5	
+	stewardship = 7	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="fortune_builder"
+	add_trait="honest"	
+	add_trait="trusting"	
+
+	father=64
+	mother=2109
+
+	8272.1.1 = {birth="8272.1.1"}
+	8284.1.1 = {
+		guardian=2122 #Wife of Balon
+		employer=1107
+	}
+	8286.1.1 = {
+		effect = {
+			c_pyke = {
+				holder_scope = {
+					random_child = { #Asha
+						limit = { is_female = yes }
+						if = {
+							limit = {
+								NOT = { year = 8287 }
+							}	
+							add_lover = ROOT
+						}
+						add_friend = ROOT
+						if = {
+							limit = { year = 8287 }
+							ROOT = {
+								opinion = {
+									modifier = opinion_infatuated
+									who = PREV
+									years = 10
+								}
+							}	
+						}
+					}
+				}
+			}
+		}	
+	}
+	8287.1.1 = {
+		employer=3028118 #sent to blacktyde after found with asha
+		guardian=3028118
+	}
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+}
+3064 = {		
+	name="Symond"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=64
+	mother=2109
+
+	8269.1.1 = {birth="8269.1.1"}	
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+}		
+4064 = {		
+	name="Harlon"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=64
+	mother=2109	
+
+	8270.1.1 = {birth="8270.1.1"}	
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+}
+5064 = {		
+	name="Vickon"		
+	dynasty=64	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=64
+	mother=2109
+
+	8271.1.1 = {birth="8271.1.1"}	
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+}
+6064 = {		
+	name="Benarion"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=64
+	mother=2109
+
+	8273.1.1 = {birth="8273.1.1"}	
+	8299.12.1={
+		add_claim=c_lordsport
+		add_claim=b_lordsport
+	}
+}
+###issue of Germund
+21064 = {		
+	name="Fruella"	
+	female=yes
+
+	add_trait="naive_appeaser"	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	8259.1.1 = {birth="8259.1.1"}	
+	8299.11.3 = {
+		employer=2107 #Euron
+	}
+	8299.12.1={
+		employer=7064 
+	}
+}
+12064 = {		
+	name="Balon"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=7064
+	mother=21064
+
+	8277.1.1 = {birth="8277.1.1"}	
+	8293.1.1={
+		add_trait=trained_warrior
+	}
+	8299.11.3 = {
+		employer=2107 #Euron
+	}
+	8299.12.1={
+		employer=7064 
+	}
+}
+13064 = {		
+	name="Quellon"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=7064
+	mother=21064
+
+	8279.1.1 = {birth="8279.1.1"}	
+	8295.1.1={
+		add_trait=trained_warrior
+	}
+	8299.11.3 = {
+		employer=2107 #Euron
+	}
+	8299.12.1={
+		employer=7064 
+	}
+}
+
+###Sargons Son, Theons Squire, The mute###
+11064 = {		
+	name="Wex"	
+	dynasty=64	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="lisp"
+	add_trait="elusive_shadow"
+	add_trait="bastard"	
+	give_nickname = nick_pyke
+
+	father=8064
+
+	8287.1.1 = {birth="8287.1.1"}
+	8299.1.1 = {
+		add_trait="squire"
+		employer=8107
+		guardian=8107
+	}
+}
+######################
+###House Saltcliffe###
+######################
+###The Lord###
+1109 = {		
+	name="Deryk"		
+	dynasty=109	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	
+	father=3024109
+	mother=4024109
+	
+	8235.1.1 = {birth="8235.1.1"}	
+	8256.1.1 = {add_spouse = 4109}
+	8295.1.1 = {death="8295.1.1"}
+}
+4109 = {		
+	name="Zofka"
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	8236.1.1 = {birth="8236.1.1"}	
+	8295.1.1 = {death="8295.1.1"}	
+}			
+###The Son###
+109 = {		
+	name="Donnor"	
+	dynasty=109	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	
+
+	father=1109
+	mother=4109
+
+	8275.1.1 = {birth="8275.1.1"}	
+}
+###################
+###House Volmark###
+###################
+1119 = {		
+	name="Harryn"	
+	dynasty=119	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="tough_soldier"
+	
+	father=3025119
+	mother=4025119
+
+	8257.1.1 = {birth="8257.1.1"}	
+	8273.1.1 = {add_spouse = 4119 add_trait="trained_warrior" }
+	8294.1.1 = {death="8294.1.1"}
+}
+4119 = {		
+	name="Mynia"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	8257.1.1 = {birth="8257.1.1"}	
+	8294.1.1 = {death="8294.1.1"}	
+}	
+5119 = {		
+	name="Maron"		
+	dynasty=119	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	
+	father=1119
+	mother=4119
+
+	8284.1.1 = {birth="8284.1.1"}	
+	8300.1.1 = {
+		add_trait=trained_warrior
+		effect = { set_character_flag = maron_volmark }
+	}
+}		
+2119 = {		
+	name="Vandya"	
+	female=yes	
+	dynasty=119	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+
+	father=1119
+	mother=4119
+
+	8279.1.1 = {birth="8279.1.1"}	
+}		
+3119 = {		
+	name="Hylda"	
+	female=yes	
+	dynasty=119	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+
+	father=1119
+	mother=4119
+	
+	8281.1.1 = {birth="8281.1.1"}	
+}
+##################
+###House Harlaw###
+##################
+16122 = {
+	name="Theomore"	#built ten towers
+	dynasty=122	
+	
+	stewardship=10
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="wroth"
+	add_trait="diligent"
+	add_trait="midas_touched"
+	
+	father=316122
+	mother=416122
+
+	8132.1.1 = {birth="8132.1.1"}	
+	8148.1.1 = { add_trait="trained_warrior" add_spouse = 111122 }	
+	8153.1.1 = {add_spouse = 112122}	
+	8165.1.1 = {add_spouse = 113122}
+	8179.1.1 = {add_spouse = 110122}	
+	8182.1.1 = {add_spouse = 114122}	
+	8192.1.1 = {add_spouse = 115122}	
+	8201.1.1 = {death="8201.1.1"}
+}
+#6 wives
+111122 = {	
+	name="Jeyne"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8115.1.1 = {birth="8115.1.1"}	
+	8152.1.1 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+112122 = {	
+	name="Brella"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	8131.1.1 = {birth="8131.1.1"}	
+	8162.1.1 = {
+		add_trait= ill
+		death = {
+			death_reason = death_trait
+		}
+	}
+}
+113122 = {	
+	name="Victaria"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8127.1.1 = {birth="8127.1.1"}	
+	8178.1.1 = {death="8178.1.1"}
+}
+110122 = {	
+	name="Jeyne"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8153.1.1 = {birth="8153.1.1"}	
+	8180.1.1 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+114122 = {	
+	name="Alannys"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8150.1.1 = {birth="8150.1.1"}	
+	8190.1.1 = {death="8190.1.1"}
+}
+115122 = {	
+	name="Harma"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8135.1.1 = {birth="8135.1.1"}	
+	8208.1.1 = {death="8208.1.1"}
+}
+##Issue of Theomore
+20122 = {
+	name="Megga"	#unknown
+	dynasty=122	
+	
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=16122
+	mother=111122
+
+	8149.1.1 = {birth="8149.1.1"}	
+	8210.4.1 = {death="8210.4.1"}
+}
+21122 = {
+	name="Jeyne"	#unknown
+	dynasty=122	
+	
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=16122
+	mother=111122
+
+	8151.1.1 = {birth="8151.1.1"}	
+	8208.4.1 = {death="8208.4.1"}
+}
+##three sons died in cradle
+17122 = {
+	name="Eerl"	#unknown
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=16122
+	mother=113122
+
+	8166.1.1 = {birth="8166.1.1"}	
+	8167.1.1 = {death="8167.1.1"}
+}
+18122 = {
+	name="Sargon"	#unknown
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=16122
+	mother=113122
+
+	8169.1.1 = {birth="8169.1.1"}	
+	8169.5.1 = {death="8169.5.1"}
+}
+19122 = {
+	name="Tymor"	#unknown
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=16122
+	mother=113122
+
+	8175.1.1 = {birth="8175.1.1"}	
+	8175.4.1 = {death="8175.4.1"}
+}
+14122 = {
+	name="Tristifer"	#unknown
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="tough_soldier"
+	
+	father=16122
+	mother=110122
+
+	8180.1.1 = {birth="8180.1.1"}	
+	8196.1.1 = {add_trait="skilled_warrior"}
+	8196.6.6 = {add_trait="nightfall"}
+	8208.1.1 = {add_spouse = 108122}	
+	8234.1.1 = {death="8234.1.1"}
+}
+108122 = {	
+	name="Morna"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8190.1.1 = {birth="8190.1.1"}	
+	8265.1.1 = {death="8265.1.1"}
+}
+##issue of Tristifer
+6122 = {
+	name="Sigrin"	#unknown
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="tough_soldier"
+	
+	father=14122
+	mother=108122
+
+	8210.1.1 = {birth="8210.1.1"}	
+	8226.1.1 = { add_trait="trained_warrior" }	
+	8230.1.1 = {add_spouse = 104122}
+	8234.1.1 = {add_trait="nightfall"}
+	8259.1.1 = {death="8259.1.1"}
+}
+104122 = {	
+	name="Barbrey"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8212.1.1 = {birth="8212.1.1"}	
+	8267.1.1 = {death="8267.1.1"}
+}
+15122 = {
+	name="Sigfryd"	#silverhair
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="strong"
+	add_trait="tough_soldier"
+	
+	father=14122
+	mother=108122
+
+	8215.1.1 = {
+		birth="8215.1.1"
+		effect = { health = 4 }
+	}	
+	8231.1.1 = { add_trait="trained_warrior" }	
+	8235.1.1 = {add_spouse = 109122}	
+	8279.1.1 = {give_nickname = nick_silverhair}
+}
+109122 = {	
+	name="Barbrey"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8215.1.1 = {birth="8215.1.1"}
+}
+##Issue of Sigrin
+3122 = {
+	name="Sigfryd"	#unknown, father of Rodrik
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="proud"
+	add_trait="tough_soldier"
+	
+	father=6122
+	mother=104122
+
+	8232.1.1 = {birth="8232.1.1"}	
+	8248.1.1 = {add_spouse = 103122}	
+	8253.1.1 = {add_trait="trained_warrior" }
+	8290.1.1 = {death="8290.1.1"}
+	
+}
+103122 = {	
+	name="Sallei"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8234.1.1 = {birth="8234.1.1"}	
+	8281.1.1 = {death="8281.1.1"}
+}
+7122 = {
+	name="Erik"	#unknown , father of Harras
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=6122
+	mother=104122
+
+	8239.1.1 = {birth="8239.1.1"}	
+	8255.1.1 = {add_trait="trained_warrior"}
+	8259.1.1 = {add_trait="nightfall"} # Nightfall
+	8260.1.1 = {add_spouse = 335221}	#A Serrett
+	8289.6.1 = {
+		death = {
+			death_reason = death_battle 
+		}
+	}
+}
+8122 = {
+	name="Harmund"	#unknown , father of Hotho and Boremond
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	
+	father=6122
+	mother=104122
+
+	8241.1.1 = {birth="8241.1.1"}	
+	8257.1.1 = { add_trait="trained_warrior" }	
+	8260.1.1 = {add_spouse = 104122}	#A Serrett
+	8295.1.1 = {death="8295.1.1"}
+}
+120122 = {	
+	name="Alannys"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8243.1.1 = {birth="8243.1.1"}	
+}
+##Issue of Sigfryd
+10001122 = {		
+	name="Gwynesse"	
+	dynasty=122	
+	female = yes
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="proud"
+	add_trait="ambitious"
+
+	father=3122
+	mother=103122
+
+	8248.1.1 = {birth="8248.1.1"}
+	8273.1.1 = { add_spouse = 105122 }	
+	8289.6.1 = {
+		add_trait = widowed
+	}
+}
+105122 = {	
+	name="Bennarion"	
+
+	add_trait="tough_soldier"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8252.1.1 = {birth="8252.1.1"}	
+	8272.1.1 = { add_trait="trained_warrior" }	
+	8289.6.1 = {
+		death = {
+			death_reason = death_battle 
+		}
+	}
+}
+###Balons Wife###
+2122 = {	
+	name="Alannys"	
+	female=yes	
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=3122
+	mother=103122	
+
+	8252.1.1 = {birth="8252.1.1"}
+	8289.1.1={ add_trait = depressed }
+	8299.11.3={ add_trait=widowed }
+}
+###The Lord###
+122 = {		
+	name="Rodrik"
+	dynasty=122
+	dna="bkgmgylagap"
+	properties="cj0cfd0000"
+
+	martial = 4	
+	diplomacy = 8	
+	intrigue = 6	
+	stewardship = 9	
+	learning = 12
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="quick"
+	add_trait="fortune_builder"	
+	add_trait="brave"
+	add_trait="scholar"
+	add_trait="kind"
+	add_trait="content"
+
+	father=3122
+	mother=103122
+
+	8255.1.1 = {birth="8255.1.1"}	
+	8279.1.1 = {give_nickname = nick_the_reader}
+	8289.1.1 = { add_trait=widowed }	
+}
+###The dead Wife###
+1001122 = {		
+	name="Ysilla"
+	female = yes
+	martial = 4	
+	diplomacy = 8	
+	intrigue = 6	
+	stewardship = 9	
+	learning = 12
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="fortune_builder"	
+	add_trait="kind"
+	add_trait="content"
+
+
+	8254.1.1 = {birth="8254.1.1"}
+	8270.1.1 = {add_spouse = 122}
+	8289.1.1 = {death="8289.1.1"}	
+}
+##Issue of Rodrik
+9122 = {
+	name="Erik"	#
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=122
+	mother=1001122
+
+	8271.1.1 = {birth="8271.1.1"}	
+	8287.1.1 = { add_trait="trained_warrior" }	
+	8289.3.1 = {
+		death = {
+			death_reason = death_battle 
+		}
+	}
+}
+10122 = {
+	name="Joseran"	#
+	dynasty=122	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=122
+	mother=1001122
+
+	8273.1.1 = { birth="8273.1.1"}	
+	8289.1.1 = { add_trait="trained_warrior" }	
+	8289.3.1 = {
+		death = {
+			death_reason = death_battle 
+		}
+	}
+}
+##Issue of Erik
+5122 = {		
+	name="Harras"	
+	dynasty=122	
+
+	martial = 10
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="temperate"	
+	add_trait="tough_soldier"	
+	add_trait="strong"
+	add_trait="proud"
+	
+
+	father=7122
+	mother=335221
+	
+	8262.1.1 = {birth="8262.1.1"}
+	8278.1.1 = {
+		give_nickname = nick_the_knight
+		add_trait="skilled_warrior"
+		add_trait="knight"
+	}
+	8289.6.1 = {
+		add_trait="nightfall"
+	}
+	8300.1.1 = {
+		effect = {
+			character_event = { id = 999900232 } #end siege in shield islands
+		}
+	}	
+}
+##issue of Harmund
+4122 = {	
+	name="Hotho"	
+	dynasty=122	
+
+	martial = 4	
+	diplomacy = 5	
+	intrigue = 5	
+	stewardship = 7	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="skilled_tactician"
+	add_trait="hunchback"
+	add_trait="ambitious"
+	
+	father=8122
+	mother=120122
+
+	8261.1.1 = {birth="8261.1.1"}
+	8279.1.1 = {
+		give_nickname = nick_the_humpback
+		add_trait="trained_warrior"
+		add_spouse=106122
+	}
+	
+}
+106122 = {	
+	name="Jorelle"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8263.1.1 = {birth="8263.1.1"}	
+}
+101122 = {		
+	name="Boremund"	#
+	dynasty=122	
+
+	martial = 8	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="brave"
+	add_trait="proud"	
+	add_trait="tough_soldier"
+	add_trait="trained_warrior"
+
+	father=8122
+	mother=120122
+
+	8263.1.1 = {birth="8263.1.1"}	
+	8279.1.1 = {
+		give_nickname = nick_the_blue
+		add_trait="trained_warrior"
+		add_spouse=107122
+	}
+}	
+107122 = {	
+	name="Harra"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8263.1.1 = {birth="8263.1.1"}	
+}
+##issue of Harmund
+11122 = {	
+	name="Munda"	
+	dynasty=122	
+
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=4122
+	mother=106122
+	employer=7122
+
+	8281.1.1 = {birth="8281.1.1"}
+	8289.6.1 = { employer=4122 }
+}
+##issue of Boremund
+24122 = {	
+	name="Vickon"	
+	dynasty=122	
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=101122
+	mother=107122
+	employer=7122
+
+	8282.1.1 = {birth="8282.1.1"}
+	8289.6.1 = { employer=101122 }
+	8297.1.1 = {
+		add_trait="trained_warrior"
+	}
+}
+12122 = {	
+	name="Torgon"	
+	dynasty=122	
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=101122
+	mother=107122
+	employer=7122
+
+	8284.1.1 = {birth="8284.1.1"}
+	8289.6.1 = { employer=101122 }
+}
+13122 = {	
+	name="Aggar"	
+	dynasty=122	
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=101122
+	mother=107122
+	employer=7122
+
+	8287.1.1 = {birth="8287.1.1"}
+	8289.6.1 = { employer=101122 }
+}
+##Sigfryd Silverhair's Line
+5000122 = {
+	name="Grisel"	# not a lord
+	female=yes
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=15122
+	mother=109122
+	employer=15122
+
+	8244.1.1 = {birth="8244.1.1"}
+}
+5001122 = {
+	name="Sigrin"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=15122
+	mother=109122
+	employer=15122
+
+	8247.1.1 = {birth="8247.1.1"}
+	8263.1.1 = {add_trait=trained_warrior}
+	8265.1.1 = {add_spouse=4001122}
+}
+4001122 = {
+	name="Morna"
+	female=yes
+	
+	employer=15122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8247.1.1 = {birth="8247.1.1"}
+}
+5002122 = {
+	name="Ygon"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=15122
+	mother=109122
+	employer=15122
+
+	8233.1.1 = {birth="8233.1.1"}
+	8249.1.1 = {add_trait=trained_warrior}
+	8251.1.1 = {add_spouse=4002122}
+	8289.4.1 = {death = {death_reason = death_battle}}
+}
+4002122 = {
+	name="Munda"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	employer=15122
+
+	8233.1.1 = {birth="8233.1.1"}
+	8289.1.1 = {death="8289.1.1"}
+}
+5003122 = {
+	name="Frynne"	# not a lord
+	female=yes
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=15122
+	mother=109122
+	employer=15122
+
+	8248.1.1 = {birth="8248.1.1"}
+	8274.1.1 = {death="8274.1.1"}
+}
+5004122 = {
+	name="Norne"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=15122
+	mother=109122
+	employer=15122
+
+	8250.1.1 = {birth="8250.1.1"}
+	8266.1.1 = {add_trait=poor_warrior}
+	8268.1.1 = {add_spouse=4004122}
+}
+4004122 = {
+	name="Falyse"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	employer=15122
+
+	8250.1.1 = {birth="8250.1.1"}
+}
+5005122 = {
+	name="Ralf"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5001122
+	mother=4001122
+	employer=15122
+
+	8273.1.1 = {birth="8273.1.1"}
+	8289.1.1 = {add_trait=poor_warrior}
+}
+5006122 = {
+	name="Unella"	# not a lord
+	female=yes
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5002122
+	mother=4002122
+	employer=15122
+
+	8258.1.1 = {birth="8258.1.1"}
+}
+5007122 = {
+	name="Urzen"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5002122
+	mother=4002122
+	employer=15122
+
+	8260.1.1 = {birth="8260.1.1"}
+	8276.1.1 = {add_trait=poor_warrior}
+}
+5008122 = {
+	name="Kenned"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5002122
+	mother=4002122
+	employer=15122
+
+	8262.1.1 = {birth="8262.1.1"}
+	8278.1.1 = {add_trait=skilled_warrior}
+}
+5009122 = {
+	name="Pate"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5004122
+	mother=4004122
+	employer=15122
+
+	8277.1.1 = {birth="8277.1.1"}
+	8293.1.1 = {add_trait=poor_warrior}
+}
+5010122 = {
+	name="Unella"	# not a lord
+	female=yes
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5004122
+	mother=4004122
+	employer=15122
+
+	8279.1.1 = {birth="8279.1.1"}
+}
+5011122 = {
+	name="Eldred"	# not a lord
+	dynasty=122
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=5004122
+	mother=4004122
+	employer=15122
+
+	8281.1.1 = {birth="8281.1.1"}
+	8297.1.1 = {add_trait=trained_warrior}
+}
+###################
+###House Orkwood###
+###################
+##The Lord###
+116 = {
+	name="Alyn"	# a lord
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=138116
+	mother=438116
+
+	8256.1.1 = {birth="8256.1.1"}
+	8272.1.1 = {add_trait=trained_warrior}
+	8274.1.1 = {add_spouse=1113}
+}
+###His Wife###
+1113 = {		
+	name="Keryn"	
+	female=yes	
+	dynasty=113	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=113	
+	
+	8262.1.1 = {birth="8262.1.1"}	
+}
+142116 = {
+	name="Wulfe"	# not a lord
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=138116
+	mother=438116
+
+	8260.1.1 = {birth="8260.1.1"}
+	8276.1.1 = {add_trait=poor_warrior}
+	8278.1.1 = {add_spouse=442116}
+}
+442116 = {
+	name="Frynne"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8260.1.1 = {birth="8260.1.1"}
+}
+143116 = {
+	name="Ralf"	# not a lord
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=116
+	mother=1113
+
+	8277.1.1 = {birth="8277.1.1"}
+	8293.1.1 = {add_trait=skilled_warrior}
+}
+144116 = {
+	name="Ferny"	# not a lord
+	female=yes
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=116
+	mother=1113
+
+	8279.1.1 = {birth="8279.1.1"}
+}
+145116 = {
+	name="Aeron"	# not a lord
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=142116
+	mother=442116
+
+	8292.1.1 = {birth="8292.1.1"}
+	8308.1.1 = {add_trait=poor_warrior}
+}
+146116 = {
+	name="Victarion"	# not a lord
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=142116
+	mother=442116
+
+	8294.1.1 = {birth="8294.1.1"}
+	8310.1.1 = {add_trait=poor_warrior}
+}
+147116 = {
+	name="Ryella"	# not a lord
+	female=yes
+	dynasty=116
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=142116
+	mother=442116
+
+	8297.1.1 = {birth="8297.1.1"}
+}
+#####################
+###House Stonetree###
+#####################
+###The Lord###
+120 = {		
+	name="Sigfry"	
+	dynasty=120	
+	
+	diplomacy = 7	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="kind"	
+	add_trait="charismatic_negotiator"
+	
+	father=9120
+	mother=10120
+
+	8242.1.1 = {birth="8242.1.1"}
+	8258.1.1 = {add_spouse = 11120}
+}
+11120 = {		
+	name="Rosalynd"
+	female=yes
+
+	add_trait="naive_appeaser"	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8242.1.1 = {birth="8242.1.1"}	
+}
+###His Children###
+1120 = {		
+	name="Quenton"	
+
+	dynasty=120	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=120
+	mother=11120
+
+	8259.1.1 = {birth="8259.1.1"}	
+}		
+2120 = {		
+	name="Bythia"	
+	female=yes	
+	dynasty=120	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=120
+	mother=11120	
+	
+	8261.1.1 = {birth="8261.1.1"}	
+}
+###Founder###
+9120 = {		
+	name="Mikken"	
+	dynasty=120	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=6021120
+	mother=5021120
+	
+	add_trait="proud"
+
+	8197.1.1 = {birth="8197.1.1"}
+	8212.1.1 = {
+		add_trait="tough_soldier"
+		add_trait="trained_warrior"
+	}
+	8213.1.1 = {add_spouse = 10120}	
+	8260.1.1 = {death="8260.1.1"}
+}
+10120 = {		
+	name="Katja"	
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8197.1.1 = {birth="8197.1.1"}
+	8260.1.1 = {death="8260.1.1"}	
+}
+#################
+###House Drumm###
+#################
+###The Lord###
+121 = {		
+	name="Dunstan"	
+	dynasty=121	
+
+	martial = 7	
+	diplomacy = 7	
+	intrigue = 5	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=6024121
+	mother=5024121
+	
+	add_trait="strong"
+
+	8229.1.1 = {birth="8229.1.1" effect = { set_character_flag = house_drumm }}
+	8244.1.1 = {
+		add_trait="tough_soldier"
+		add_trait="trained_warrior"	
+		add_trait="brave"
+	}
+	8245.1.1 = {add_spouse = 3121}
+	8247.1.1 = {add_trait="redrain"}
+	8279.1.1 = {give_nickname = nick_bonehand}
+}
+3121 = {		
+	name="Stoja"
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8229.1.1 = {birth="8229.1.1"}	
+	8244.1.1 = {
+		add_trait="naive_appeaser"
+		add_trait="proud"
+	}
+}
+###His Children###
+1121 = {		
+	name="Denys"	
+	dynasty=121	
+
+	martial = 8	
+	diplomacy = 4	
+	intrigue = 3	
+	stewardship = 6	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father = 121
+	mother=3121
+
+	8259.1.1 = {birth="8259.1.1"}	
+	8274.1.1 = {
+		add_trait="misguided_warrior"	
+		add_trait="lustful"	
+	}
+}
+2121 = {		
+	name="Donnel"	
+	dynasty=121	
+
+	martial = 7	
+	diplomacy = 7	
+	intrigue = 5	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"		
+
+	father = 121
+	mother=3121
+
+	8269.1.1 = {birth="8269.1.1"}	
+}
+#Captain in Service
+9121 = {		
+	name="Andrik" #The Unsmiling
+	
+	martial = 10
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	employer=121
+	
+	add_trait="brave"
+	add_trait="wroth"
+	add_trait="strong"
+	
+	8265.1.1 = { birth="8265.1.1" }
+	8281.1.1 = {
+		add_trait="tough_soldier"
+		add_trait="skilled_warrior"	
+		give_nickname = nick_the_unsmiling
+	}
+	8300.1.1 = {
+		effect = {
+			character_event = { id = 999900232 } #end siege in shield islands
+		}
+	}
+}
+##################
+###House Merlyn###
+##################
+###Lord###
+110 = {		
+	name="Meldred"	
+	dynasty=110	
+
+	martial = 6	
+	diplomacy = 5	
+	intrigue = 5	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=6026110
+	mother=5026110
+
+	8262.1.1 = {birth="8262.1.1"}
+	8277.1.1 = {add_trait="tough_soldier"}
+	8280.1.1 = {add_spouse = 3110}
+}
+3110 = {		
+	name="Mlada"
+	female=yes
+	
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	8262.1.1 = {birth="8262.1.1"}
+	8277.1.1 = {add_trait="naive_appeaser"}
+}
+###Children###		
+1110 = {		
+	name="Rynilde"	
+	female=yes	
+	dynasty=110	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=110
+	mother=3110
+	
+	8279.1.1 = {birth="8279.1.1"}	
+}
+2110 = {		
+	name="Manfryd"	
+	dynasty=110	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=110
+	mother=3110
+	
+	8280.1.1 = {birth="8280.1.1"}	
+}
+#####################################
+###House Goodbrother of Hammerhorn###
+#####################################
+###The Lord###
+112 = {		
+	name="Gorold"	
+	dynasty=112	
+
+	martial = 5	
+	diplomacy = 5	
+	intrigue = 5	
+	stewardship = 5	
+	learning = 5
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=100112
+	mother=901112
+	
+	add_trait="craven"	
+	add_trait="just"	
+	add_trait="tough_soldier"
+	add_trait="trained_warrior"	
+	add_trait="lustful"		
+
+	8250.1.1 = {birth="8250.1.1"}
+	8266.1.1 = {add_spouse = 90112}	
+}
+90112 = {		
+	name="Nessa"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	8250.1.1 = {birth="8250.1.1"}	
+}
+##############
+###Children###
+##############
+###Two Eldest Daughters###
+1112 = {		
+	name="Gysella"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=112
+	mother=90112	
+
+	8268.1.1 = {birth="8268.1.1"}	
+}	
+2112 = {		
+	name="Gwin"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	
+	
+	father=112
+	mother=90112	
+	
+	8266.1.1 = {birth="8266.1.1"}	
+}
+###The Ten Unnamed Daughters###
+6112 = {		
+	name="Victoria"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8267.1.1 = {birth="8267.1.1"}	
+}
+7112 = {		
+	name="Olivia"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8268.1.1 = {birth="8268.1.1"}	
+}
+8112 = {		
+	name="Triselda"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8269.1.1 = {birth="8269.1.1"}	
+}
+9112 = {		
+	name="Gormona"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8270.1.1 = {birth="8270.1.1"}	
+}
+10112 = {		
+	name="Wilma"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8271.1.1 = {birth="8271.1.1"}	
+}
+11112 = {		
+	name="Jovanka"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8272.1.1 = {birth="8272.1.1"}	
+}
+12112 = {		
+	name="Erika"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8273.1.1 = {birth="8273.1.1"}	
+}
+13112 = {		
+	name="Ingrid"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8274.1.1 = {birth="8274.1.1"}	
+}
+14112 = {		
+	name="Neda"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8275.1.1 = {birth="8275.1.1"}	
+}
+15112 = {		
+	name="Ursila"	
+	female=yes	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=112
+	mother=90112	
+	
+	8276.1.1 = {birth="8276.1.1"}	
+}
+###3 more sons###
+3112 = {		
+	name="Greydon"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=112
+	mother=90112	
+
+	8277.1.1 = {birth="8277.1.1"}	
+}
+4112 = {		
+	name="Gormond"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=112
+	mother=90112	
+
+	8278.1.1 = {birth="8278.1.1"}	
+}
+5112 = {		
+	name="Gran"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=112
+	mother=90112	
+
+	8279.1.1 = {birth="8279.1.1"}	
+}
+#####################################
+###House Goodbrother of Shatterstone###
+#####################################
+200112 = {		
+	name="Norne"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=204112
+
+	8256.1.1 = { birth="8256.1.1"}	
+	8272.1.1 = { 
+		add_spouse=201112
+	}
+	
+}
+201112 = {		
+	name="Megga"	
+	female=yes	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	employer=200112
+
+	8256.1.1 = {birth="8256.1.1"}	
+}
+202112 = {		
+	name="Norjen"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=200112
+	mother=201112
+	employer=200112
+
+	8275.1.1 = { birth="8275.1.1"}	
+}
+213112 = {		
+	name="Romny"	
+	dynasty=112	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=200112
+	mother=201112
+	employer=200112
+
+	8277.1.1 = { birth="8277.1.1"}	
+}
+203112 = {		
+	name="Asha"	
+	dynasty=112	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=200112
+	mother=201112
+	employer=200112
+
+	8279.1.1 = { birth="8279.1.1"}	
+}
+#####################################
+###House Goodbrother of Orkmont###
+#####################################
+300112 = {		
+	name="Boremund"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=101112
+	mother=900112
+	employer=116
+	
+	8225.1.1 = { birth="8225.1.1"}
+	8251.1.1 = { add_spouse=301112 }
+	8289.1.1 = { death="8289.1.1"}
+}
+301112 = {		
+	name="Ursila"	
+	female=yes	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	employer=116
+	
+	8235.1.1 = { birth="8235.1.1"}
+}
+302112 = {		
+	name="Sigfryd"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=300112
+	mother=301112
+	employer=116
+	
+	8253.1.1 = { birth="8253.1.1"}
+	8273.1.1 = { add_spouse=304112 }
+}
+304112 = {		
+	name="Ingrid"	
+	female=yes	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	employer=116
+	
+	8257.1.1 = { birth="8257.1.1"}
+}
+305112 = {		
+	name="Manfryd"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=302112
+	mother=304112
+	employer=116
+	
+	8277.1.1 = { birth="8277.1.1"}
+}
+303112 = {		
+	name="Stygg"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=300112
+	mother=301112
+	employer=116
+	
+	8257.1.1 = { birth="8257.1.1"}
+}
+#####################################
+###House Goodbrother of Corpse Lake###
+#####################################
+###The Lord###
+400112 = {		
+	name="Aeron"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=100112
+	mother=901112
+	
+	8255.1.1 = {birth="8255.1.1"}
+	8274.1.1 = {add_spouse = 401112}	
+}
+401112 = {		
+	name="Erika"	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+	employer=400112
+
+	8257.1.1 = { birth="8257.1.1"}
+}
+402112 = {		
+	name="Pruella"	
+	dynasty=112	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=400112
+	mother=401112
+	employer=400112
+	
+	8277.1.1 = {birth="8277.1.1"}
+}
+403112 = {		
+	name="Triston"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=400112
+	mother=401112
+	employer=400112
+	
+	8279.1.1 = {birth="8279.1.1"}
+}
+404112 = {		
+	name="Qalen"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=400112
+	mother=401112
+	employer=400112
+	
+	8280.1.1 = {birth="8280.1.1"}
+}
+#####################################
+###House Goodbrother of Crow Spike Keep###
+#####################################
+500112 = {		
+	name="Kromm"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=101112
+	mother=900112
+
+	8227.1.1 = { birth="8227.1.1"}
+	8251.1.1 = { add_spouse=501112 }
+	8281.1.1 = { death="8281.1.1"}
+}
+501112 = {		
+	name="Asha"	
+	female=yes	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	employer=502112
+
+	8233.1.1 = { birth="8233.1.1"}
+}
+502112 = {		
+	name="Andrik"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=500112
+	mother=501112
+	
+	8254.1.1 = { birth="8254.1.1"}
+	8270.1.1 = { add_spouse=504112 }
+}
+504112 = {		
+	name="Ingrid"	
+	female=yes	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	employer=502112
+
+	8250.1.1 = { birth="8250.1.1"}
+}
+505112 = {		
+	name="Urzen"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=502112
+	mother=504112
+	employer=502112
+	
+	8277.1.1 = { birth="8277.1.1"}
+}
+503112 = {		
+	name="Mella"	
+	dynasty=112	
+	female=yes
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=500112
+	mother=501112
+	employer=502112
+	
+	8265.1.1 = { birth="8265.1.1"}
+}
+#####################################
+###House Goodbrother of Downdelving###
+#####################################
+###The Lord###
+600112 = {		
+	name="Sawane"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=100112
+	mother=901112
+	
+	8259.1.1 = {birth="8259.1.1"}
+	8277.1.1 = {add_spouse = 601112}	
+}
+601112 = {		
+	name="Urriga"	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	8261.1.1 = { birth="8261.1.1"}
+}
+602112 = {		
+	name="Steffar"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=600112
+	mother=601112
+	
+	8278.1.1 = {birth="8278.1.1"}
+}
+603112 = {		
+	name="Qheira"	
+	dynasty=112	
+	female=yes
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=600112
+	mother=601112
+	
+	8280.1.1 = {birth="8280.1.1"}
+}
+604112 = {		
+	name="Ambrode"	
+	dynasty=112	
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=600112
+	mother=601112
+	
+	8282.1.1 = {birth="8282.1.1"}
+}
+###################
+###House Farwynd###
+###################
+###The Lord###
+114 = {		
+	name="Triston"	
+	dynasty=114	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=3025114
+	mother=4025114
+	
+	8255.1.1 = {birth="8255.1.1"}
+	8271.1.1 = {add_spouse = 5114}	
+	8271.1.1 = {add_trait=poor_warrior}
+}
+5114 = {		
+	name="Asha"
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	8255.1.1 = {birth="8255.1.1"}	
+}
+###Children###	
+1114 = {		
+	name="Gyles"	
+	dynasty=114	
+
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=114
+	mother=5114	
+
+	8272.1.1 = {birth="8272.1.1"}	
+}		
+2114 = {		
+	name="Ygon"	
+	dynasty=114	
+
+	religion="drowned_god"	
+	culture="ironborn"		
+	
+	father=114
+	mother=5114		
+
+	8274.1.1 = {birth="8274.1.1"}	
+}		
+3114 = {		
+	name="Yohn"	
+	dynasty=114	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=114
+	mother=5114		
+
+	8279.1.1 = {birth="8279.1.1"}	
+}		
+4114 = {		
+	name="Myrna"	
+	female=yes	
+	dynasty=114	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+
+	father=114
+	mother=5114		
+
+	8276.1.1 = {birth="8276.1.1"}	
+}
+#############################
+###House Farwynd of Lonely Light###
+#############################
+30258114 = {
+	name="Gylbert"	# Ulf's son, a lord
+	dynasty=114
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=30218114
+	mother=40218114
+	
+	add_trait=ambitious
+	add_trait=mystic
+
+	8241.1.1 = {birth="8241.1.1"}
+	8257.1.1 = { add_trait=trained_warrior}
+}
+40258114 = {
+	name="Asha"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8241.1.1 = {birth="8241.1.1"}
+	8259.1.1 = {add_spouse=30258114}
+}
+30268114 = {
+	name="Gyles"	# 
+	dynasty=114
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=30258114
+	mother=40258114
+
+	8267.1.1 = {birth="8267.1.1"}
+	8283.1.1 = {add_trait=trained_warrior}
+}
+30288114 = {
+	name="Ygon"	# 
+	dynasty=114
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=30258114
+	mother=40258114
+
+	8272.1.1 = {birth="8272.1.1"}
+	8288.1.1 = { add_trait=trained_warrior}
+}
+30298114 = {
+	name="Yohn"	# 
+	dynasty=114
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=30258114
+	mother=40258114
+
+	8275.1.1 = {birth="8275.1.1"}
+	8291.1.1 = { add_trait=poor_warrior}
+}
+
+#####################
+###House Blacktyde###
+#####################
+118 = {		
+	name="Baelor"	
+	dynasty=118	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=3028118
+	mother=5028118
+	
+	8261.1.1 = {birth="8261.1.1"}
+	8277.1.1 = {add_spouse = 2118}
+	8295.1.1 = {
+		effect = {
+			religion=the_seven
+		}
+	}
+	8300.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 2107
+		}
+	}
+}
+3118 = {
+	name="Beron"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	father=3028118
+	mother=5028118
+	
+	learning = 8
+	
+	8263.1.1 = {birth="8263.1.1"}
+	8282.1.1 = {
+		add_trait="drowned"
+	}
+}
+2118 = {		
+	name="Mhaegen"	
+	female=yes
+
+	add_trait="naive_appeaser"
+	add_trait="proud"
+	
+	religion="drowned_god"	
+	culture="ironborn"		
+	
+	8261.1.1 = {birth="8261.1.1"}	
+}
+###Son###
+1118 = {		
+	name="Baelon"	
+	dynasty=118	
+	
+	religion="drowned_god"	
+	culture="ironborn"
+
+	father=118
+	mother=2118
+	
+	8277.1.1 = {birth="8277.1.1"}	
+}		
+####################
+###House Sparr###
+####################
+3000113 = {
+	name="Cromm"	# a lord
+	dynasty=113
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	father=6017113
+	mother=5017113
+
+	8225.1.1 = {birth="8225.1.1"}
+	8241.1.1 = {add_trait=skilled_warrior}
+	8243.1.1 = {add_spouse=4000113}
+	8289.1.1 = {death="8289.1.1"}
+}
+4000113 = {
+	name="Roelle"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8225.1.1 = {birth="8225.1.1"}
+	8272.1.1 = {death="8272.1.1"}
+}
+113 = {		
+	name="Steffarion"	
+	dynasty=113	
+	
+	religion="drowned_god"	
+	culture="ironborn"	
+	
+	father=3000113
+	mother=4000113
+	
+	8244.1.1 = {birth="8244.1.1"}	
+	8260.1.1 = {add_trait=trained_warrior}
+	8270.1.1 = {add_spouse=4001113}
+}
+3001113 = {
+	name="Selyse"	# Cromm's daughter, not,a lord
+	female=yes
+	dynasty=113
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000113
+	mother=4000113
+
+	8249.1.1 = {birth="8249.1.1"}
+	8289.1.1 = {death="8289.1.1"}
+}
+4001113 = {
+	name="Asha"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8243.1.1 = {birth="8243.1.1"}
+}
+3002113 = {
+	name="Tristifer"	# Steffarion's son
+	dynasty=113
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=113
+	mother=3001113
+
+	8275.1.1 = {birth="8275.1.1"}
+	8291.1.1 = {add_trait=trained_warrior}
+}
+####################
+######Low Born######
+####################
+201081092 = {
+	name="Dagmer"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	martial = 9
+	
+	add_trait="skilled_tactician"
+	add_trait="proud"
+	add_trait="brave"
+	add_trait="ambitious"
+	add_trait="rude"
+	
+	8252.1.1 = {birth="8252.1.1"}
+	8262.1.1 = { #axe accident
+		add_trait="scarred"
+		add_trait="ugly"
+		give_nickname = nick_cleftjaw
+	}
+	8278.1.1 = {
+		add_trait="master_warrior"
+	}
+	8280.1.1 = { employer=1107 } # Balon Greyjoy
+	8292.1.1 = {
+		remove_trait="master_warrior"
+		add_trait="skilled_warrior"
+	}
+	8299.7.2 = {
+		effect = {
+			if = {
+				limit = { NOT = { year = 8300 } }
+				spawn_unit = {
+					province = 44
+					home = 44
+					scaled_by_biggest_garrison = 0.5
+					troops = {
+						archers = { 10 10 }
+						heavy_infantry = { 5 5 }
+						light_infantry = { 20 20 }							
+					}
+					attrition = 1.0
+				}
+				character_event = { id = 999900232 } #end siege
+			}	
+		}
+	}
+	8299.11.3 = {
+		employer=2107 
+	}
+}
+####################
+######Ironmaker######
+####################
+205081092 = {
+	name="Erik"
+	dynasty=4500019
+
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	martial = 10
+	stewardship = 14
+	
+	add_trait="thrifty_clerk"
+	add_trait="ambitious"
+	add_trait="strong"
+	add_trait="just"
+	add_trait="diligent"
+	add_trait="gluttonous"
+
+	employer=18107
+
+	8211.1.1 = {
+		birth="8211.1.1"
+		effect = { health = 4 }
+	}
+	8216.1.1={
+		employer=17107
+	}
+	8227.1.1 = {
+		add_trait="master_warrior"
+		give_nickname=nick_anvilbreaker
+	}
+	8258.1.1 = {
+		employer=107
+	}	
+	8261.1.1 = {
+		remove_trait="master_warrior"
+		add_trait="skilled_warrior"
+	}
+	8270.1.1 = {
+		employer=1107
+	}
+	8284.1.1 = {
+		add_trait="infirm"
+	}
+	8299.11.3 = {
+		employer=2107 
+		add_spouse=7107 #Asha
+	}
+}
+205082092 = {
+	name="Harl"	#non-canon name
+	dynasty=4500019
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="strong"
+
+	father=205081092
+
+	employer=17107
+
+	8240.1.1 = {birth="8240.1.1"}
+	8256.1.1 = {
+		add_trait="trained_warrior"
+	}
+	8258.1.1 = {
+		employer=107
+	}	
+	8270.1.1 = {
+		employer=1107
+	}
+	8289.6.1={
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+205083092 = {
+	name="Urek"	#canon
+	dynasty=4500019
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="strong"
+
+	father=205082092
+
+	employer=1107
+
+	8270.1.1 = {birth="8270.1.1"}
+	8286.1.1 = {
+		add_trait="misguided_warrior"
+		add_trait="trained_warrior"
+	}
+}
+205084092 = {
+	name="Thormor"	#canon
+	dynasty=4500019
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="strong"
+
+	father=205082092
+
+	employer=1107
+
+	8271.1.1 = {birth="8271.1.1"}
+	8286.1.1 = {
+		add_trait="tough_soldier"
+		add_trait="skilled_warrior"
+	}
+}
+205085092 = {
+	name="Dagon"	#canon
+	dynasty=4500019
+
+	religion="drowned_god"	
+	culture="ironborn"
+
+	add_trait="strong"
+
+	father=205082092
+
+	employer=1107
+
+	8273.1.1 = {birth="8273.1.1"}
+	8286.1.1 = {
+		add_trait="misguided_warrior"
+		add_trait="poor_warrior"
+	}
+}
+#####################
+###House Wynch###
+#####################
+5067 = {
+	name="Harmund"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	dynasty=67
+	
+	father=302267
+	mother=402267
+	
+	8222.1.1 = {birth="8222.1.1"}
+	8250.1.1 = { add_spouse=6067 }
+	8280.1.1 = {death="8280.1.1"}
+}
+6067 = {
+	name="Grisella"
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	
+
+	8230.1.1 = { birth="8230.1.1"}
+	8295.1.1 = { death="8295.1.1"}
+}
+67 = {
+	name="Waldon"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	dynasty=67
+	father=5067
+	mother=6067
+	
+	add_trait="ambitious"
+
+	8255.1.1 = {birth="8255.1.1"}
+	8273.1.1 = { add_spouse=1067 }
+
+}
+7067 = {
+	name="Aladale"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	dynasty=67
+	father=5067
+	mother=6067
+	
+	8257.1.1 = {birth="8257.1.1"}
+	8277.1.1 = { 
+		employer=121000 
+		add_trait="trained_warrior"
+		add_trait="nightswatch"
+	}
+	8294.1.1 = {	
+		employer=336 
+	}
+	8300.3.1={
+		death = {
+			death_reason = death_battle #Battle of the Bridge of Skulls.
+		}
+	}
+
+}
+1067 = {
+	name="Grisella"
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	
+
+	8257.1.1 = {birth="8257.1.1"}
+
+}
+2067 = {
+	name="Gorold"
+	dynasty=67
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="ambitious"
+	father=67
+	mother=1067
+
+	8275.1.1 = { birth="8275.1.1"}
+
+}
+3067 = {
+	name="Gretchel"
+	female=yes
+	dynasty=67
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="ambitious"
+	father=67
+	mother=1067
+
+	8277.1.1 = { birth="8277.1.1"}
+
+}
+4067 = {
+	name="Will"
+	dynasty=67
+	religion="drowned_god"	
+	culture="ironborn"
+	
+	add_trait="ambitious"
+	father=67
+	mother=1067
+
+	8277.1.1 = { birth="8277.1.1"}
+
+}
+#####################
+###House Sunderly###
+#####################
+117 = {
+	name="Thormor"
+
+	religion="drowned_god"	
+	culture="ironborn"
+	dynasty=117
+	
+	father=317117
+	mother=417117
+	
+	8210.1.1 = {birth="8210.1.1"}
+	8228.1.1 = { add_spouse=1117 }
+	8268.1.1 = {death="8268.1.1"}
+}
+1117 = {
+	name="Ravella"
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	
+
+	8211.1.1 = {birth="8211.1.1"}
+	8281.1.1 = {death="8281.1.1"}
+}
+
+15107 = {
+	name="Elvira"	  ###Balons Mother###
+	female=yes	
+	dynasty=117
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	father=117
+	mother=1117
+	
+	8230.1.1 = {birth="8230.1.1"}
+	8265.1.1 = {death="8265.1.1"}	
+}
+2117 = {
+	name="Kenned"	  
+	dynasty=117
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	father=117
+	mother=1117
+	
+	8233.1.1 = {birth="8233.1.1"}
+	8260.1.1 = { add_spouse=3117 }
+	8294.1.1 = {death="8294.1.1"}	
+}
+3117 = {
+	name="Brella"
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	employer=2117
+	
+
+	8242.1.1 = {birth="8242.1.1"}
+	8294.1.1 = { employer=4117 }	
+}
+4117 = {
+	name="Lucas"	  
+	dynasty=117
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	father=2117
+	mother=3117
+	employer=2117
+	
+	8263.1.1 = {birth="8263.1.1"}
+	8288.1.1 = { add_spouse=5117 }
+}
+5117 = {
+	name="Brella"
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	employer=2117
+	
+
+	8270.1.1 = {birth="8270.1.1"}
+	8294.1.1 = { employer=4117 }	
+}
+6117 = {
+	name="Meldred"	  
+	dynasty=117
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	father=4117
+	mother=5117
+	employer=2117
+	
+	8290.1.1 = {birth="8290.1.1"}
+	8294.1.1 = { employer=4117 }	
+}
+7117 = {
+	name="Norne"	  
+	dynasty=117
+	
+	religion="drowned_god"	
+	culture="ironborn"
+	father=2117
+	mother=3117
+	employer=2117
+	
+	8267.1.1 = {birth="8267.1.1"}
+	8294.1.1 = { employer=4117 }	
+}
+8117 = {
+	name="Jonella"	  
+	dynasty=117
+	female=yes
+	religion="drowned_god"	
+	culture="ironborn"
+	father=2117
+	mother=3117
+	employer=2117
+	
+	8270.1.1 = {birth="8270.1.1"}
+	8294.1.1 = { employer=4117 }	
+}
+#####################
+###House Kenning###
+#####################
+3000115 = {
+	name="Balon"	# a lord
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	father=6024115
+	mother=5024115
+
+	8230.1.1 = {birth="8230.1.1"}
+	8246.1.1 = {add_trait=poor_warrior}
+	8248.1.1 = {add_spouse=4000115}
+	8287.1.1 = {death="8287.1.1"}
+}
+4000115 = {
+	name="Asha"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8230.1.1 = {birth="8230.1.1"}
+	8287.1.1 = {death="8287.1.1"}
+}
+3001115 = {
+	name="Victaria"	# Balon's daughter, not a lord
+	female=yes
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000115
+	mother=4000115
+
+	8251.1.1 = {birth="8251.1.1"}
+	8300.1.1 = {death="8300.1.1"}
+}
+3002115 = {
+	name="Gormond"	# Balon's son, a lord
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000115
+	mother=4000115
+
+	8252.1.1 = {birth="8252.1.1"}
+	8268.1.1 = {add_trait=trained_warrior}
+	8270.1.1 = {add_spouse=4002115}
+	8288.1.1 = {death="8288.1.1"}
+}
+3003115 = {
+	name="Jonella"	# Balon's daughter, not a lord
+	female=yes
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000115
+	mother=4000115
+
+	8255.1.1 = {birth="8255.1.1"}
+}
+3008115 = {
+	name="Ralf"	# Balon's son, not a lord
+	dynasty=115
+	
+	martial=15
+	add_trait="tough_soldier"
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000115
+	mother=4000115
+
+	8260.1.1 = {birth="8260.1.1"}
+	8276.1.1 = { add_trait=trained_warrior }
+	8300.3.1 = { 
+		death = {
+			death_reason = death_battle 
+			#ramsey snow
+		} 
+	}
+}
+4002115 = {
+	name="Jonnela"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8252.1.1 = {birth="8252.1.1"}
+	8288.1.1 = {death="8288.1.1"}
+}
+3004115 = {
+	name="Donnel"	# Gormond's son, not a lord
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002115
+	mother=4002115
+
+	8278.1.1 = {birth="8278.1.1"}
+	8283.1.1 = {death="8283.1.1"}
+}
+3005115 = {
+	name="Ysilla"	# Gormond's daughter, not a lord
+	female=yes
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002115
+	mother=4002115
+
+	8281.1.1 = {birth="8281.1.1"}
+}
+3006115 = {
+	name="Dykk"	# Gormond's son, a lord
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002115
+	mother=4002115
+
+	8283.1.1 = {birth="8283.1.1"}
+	8299.1.1 = {add_trait=poor_warrior}
+}
+3007115 = {
+	name="Gwynesse"	# Gormond's daughter, not a lord
+	female=yes
+	dynasty=115
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002115
+	mother=4002115
+
+	8284.1.1 = {birth="8284.1.1"}
+	8286.1.1 = {death = {death_reason = death_accident}}
+}
+#####################
+###House Myre###
+#####################
+3000111 = {
+	name="Tristifer"	# a lord
+	dynasty=111
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	father=6026111
+	mother=5026111
+
+	8230.1.1 = {birth="8230.1.1"}
+	8246.1.1 = {add_trait=poor_warrior}
+	8248.1.1 = {add_spouse=4000111}
+	8291.1.1 = {death="8291.1.1"}
+}
+4000111 = {
+	name="Alannys"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8230.1.1 = {birth="8230.1.1"}
+	8271.1.1 = {death="8271.1.1"}
+}
+3001111 = {
+	name="Ravella"	# Tristifer's daughter
+	female=yes
+	dynasty=111
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000111
+	mother=4000111
+
+	8264.1.1 = {birth="8264.1.1"}
+}
+3002111 = {
+	name="Selyse"	# Tristifer's daughter, not a lord
+	female=yes
+	dynasty=111
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000111
+	mother=4000111
+
+	8266.1.1 = {birth="8266.1.1"}
+	8297.1.1 = {death = {death_reason = death_accident}}
+}
+3003111 = {
+	name="Jon"	# Tristifer's son (Pinchface)
+	dynasty=111
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000111
+	mother=4000111
+
+	8269.1.1 = {birth="8269.1.1"}
+	8285.1.1 = {add_trait=trained_warrior}
+}
+#####################
+###House Stonehouse###
+#####################
+3000108 = {
+	name="Victarion"	# a lord
+	dynasty=108
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	father=6022108
+	mother=5022108
+
+	8220.1.1 = {birth="8220.1.1"}
+	8236.1.1 = {add_trait=skilled_warrior}
+	8238.1.1 = {add_spouse=4000108}
+	8277.1.1 = {death="8277.1.1"}
+}
+4000108 = {
+	name="Rhonda"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8220.1.1 = {birth="8220.1.1"}
+	8277.1.1 = {death="8277.1.1"}
+}
+3001108 = {
+	name="Harra"	# Victarion's daughter, not a lord
+	female=yes
+	dynasty=108
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000108
+	mother=4000108
+
+	8245.1.1 = {birth="8245.1.1"}
+}
+3002108 = {
+	name="Theon"	# Victarion's son, a lord
+	dynasty=108
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000108
+	mother=4000108
+
+	8248.1.1 = {birth="8248.1.1"}
+	8264.1.1 = {add_trait=trained_warrior}
+	8266.1.1 = {add_spouse=4002108}
+}
+4002108 = {
+	name="Frynne"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8248.1.1 = {birth="8248.1.1"}
+	8300.1.1 = {death="8300.1.1"}
+}
+3003108 = {
+	name="Helya"	# Theon's daughter, not a lord
+	female=yes
+	dynasty=108
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002108
+	mother=4002108
+
+	8269.1.1 = {birth="8269.1.1"}
+}
+3004108 = {
+	name="Ralf"	# Theon's son #red ralf
+	dynasty=108
+	
+	martial=9
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002108
+	mother=4002108
+	add_trait=skilled_tactician
+
+	8272.1.1 = { birth="8272.1.1"}
+	8288.1.1 = { add_trait=trained_warrior }
+}
+#####################
+###House Tawney###
+#####################
+3000123 = {
+	name="Kemmett"	# a lord
+	dynasty=123
+
+	religion="drowned_god"
+	culture="ironborn"
+	
+	father=6027123
+	mother=5027123
+
+	8215.1.1 = {birth="8215.1.1"}
+	8231.1.1 = {add_trait=skilled_warrior}
+	8233.1.1 = {add_spouse=4000123}
+	8262.1.1 = {death="8262.1.1"}
+}
+4000123 = {
+	name="Mhaegan"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8215.1.1 = {birth="8215.1.1"}
+	8262.1.1 = {death="8262.1.1"}
+}
+3001123 = {
+	name="Rhonda"	# Kemmett's daughter, not a lord
+	female=yes
+	dynasty=123
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000123
+	mother=4000123
+
+	8235.1.1 = {birth="8235.1.1"}
+	8290.1.1 = {death="8290.1.1"}
+}
+3002123 = {
+	name="Fralegg"	# Kemmett's son, a lord
+	dynasty=123
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000123
+	mother=4000123
+
+	8238.1.1 = {birth="8238.1.1"}
+	8254.1.1 = {add_trait=poor_warrior}
+	8256.1.1 = {add_spouse=4002123}
+	8293.1.1 = {death="8293.1.1"}
+}
+3005123 = {
+	name="Lenwood"	# Kemmett's son, not a lord
+	dynasty=123
+	
+	martial=8
+	
+	add_trait="tough_soldier"
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3000123
+	mother=4000123
+
+	8242.1.1 = {birth="8242.1.1"}
+	8258.1.1 = {add_trait=trained_warrior}
+}
+4002123 = {
+	name="Falyse"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8238.1.1 = {birth="8238.1.1"}
+	8278.1.1 = {death="8278.1.1"}
+}
+3003123 = {
+	name="Balon"	# Fralegg's son, a lord
+	dynasty=123
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002123
+	mother=4002123
+
+	8272.1.1 = {birth="8272.1.1"}
+	8288.1.1 = {add_trait=trained_warrior}
+}
+3004123 = {
+	name="Unella"	# Fralegg's daughter, not a lord
+	female=yes
+	dynasty=123
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=3002123
+	mother=4002123
+
+	8273.1.1 = {birth="8273.1.1"}
+}
+###House Codd###
+127174419 = {
+	name="Dagon"	# not a lord
+	dynasty=174419
+	
+	martial=4
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=124174419
+	mother=424174419
+	
+	add_trait=just
+	add_trait=paranoid
+	add_trait=proud
+	add_trait=tough_soldier
+
+	8247.1.1 = {birth="8247.1.1"}
+	8263.1.1 = {add_trait=skilled_warrior}
+}
+
+128174419 = {
+	name="Qalen"	# a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=126174419
+	mother=426174419
+
+	8269.1.1 = {birth="8269.1.1"}
+	8285.1.1 = {add_trait=poor_warrior}
+	8287.1.1 = {add_spouse=428174419}
+}
+428174419 = {
+	name="Beony"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8269.1.1 = {birth="8269.1.1"}
+}
+129174419 = {
+	name="Tom"	# not a lord
+	dynasty=174419
+	
+	martial=6
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=126174419
+	mother=426174419
+	
+	add_trait=tough_soldier
+
+	8270.1.1 = {birth="8270.1.1"}
+	8286.1.1 = {add_trait=trained_warrior}
+}
+130174419 = {
+	name="Aladale"	# not a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=128174419
+	mother=428174419
+
+	8290.1.1 = {birth="8290.1.1"}
+	8306.1.1 = {add_trait=skilled_warrior}
+}
+131174419 = {
+	name="Brella"	# not a lord
+	female=yes
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=128174419
+	mother=428174419
+
+	8291.1.1 = {birth="8291.1.1"}
+}
+132174419 = {
+	name="Triston"	# not a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=125174419
+	mother=425174419
+
+	8240.1.1 = {birth="8240.1.1"}
+	8256.1.1 = {add_trait=skilled_warrior}
+	8258.1.1 = {add_spouse=432174419}
+	8274.1.1 = {death="8274.1.1"}
+}
+432174419 = {
+	name="Harma"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8240.1.1 = {birth="8240.1.1"}
+	8274.1.1 = {death="8274.1.1"}
+}
+133174419 = {
+	name="Urrigon"	# not a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=125174419
+	mother=425174419
+
+	8243.1.1 = {birth="8243.1.1"}
+	8259.1.1 = {add_trait=poor_warrior}
+	8261.1.1 = {add_spouse=433174419}
+	8289.1.1 = {death="8289.1.1"}
+}
+433174419 = {
+	name="Rhonda"
+	female=yes
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	8243.1.1 = {birth="8243.1.1"}
+	8289.1.1 = {death="8289.1.1"}
+}
+134174419 = {
+	name="Lucas"	# not a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=132174419
+	mother=432174419
+	
+
+	8261.1.1 = {birth="8261.1.1"}
+	8277.1.1 = {add_trait=trained_warrior add_trait=cruel
+	add_trait=ruthless}
+}
+135174419 = {
+	name="Eldred"	# not a lord
+	dynasty=174419
+
+	religion="drowned_god"
+	culture="ironborn"
+
+	father=133174419
+	mother=433174419
+	
+
+	8268.1.1 = {birth="8268.1.1"}
+	8284.1.1 = {add_trait=trained_warrior add_trait=gregarious
+	add_trait=brave}
+}

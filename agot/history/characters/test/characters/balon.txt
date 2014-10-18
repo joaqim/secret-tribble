@@ -1,0 +1,23 @@
+###################
+###House Greyjoy###
+###################
+###THE Balon###
+1107 = {	
+	name="Balon"	
+	dynasty=107	
+	dna="hhpefjgogjl"
+	properties="cj0c0d"
+	dna="ddijhhebgdc"
+	properties="cj0dik0000"
+}
+	
+##Balons father###
+107 = {
+	name="Quellon"	
+	dynasty=107
+
+	martial = 8
+	
+	religion="drowned_god"	
+	culture="ironborn"
+}		

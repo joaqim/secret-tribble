@@ -1,0 +1,12 @@
+{
+    "name": "Anvil",
+    "version": "1.0.0",
+    "dependencies": {
+        "jquery": "1.9",
+        "requirejs": null,
+	"darlingjs": null,
+	"darlingjs-geometry": null,
+	"fs": null,
+	"path":null
+    }
+}
